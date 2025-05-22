@@ -22,7 +22,9 @@ async function bootstrap() {
   ))
   app.setGlobalPrefix("api/v1")
   app.enableCors({
-    origin: [process.env.FRONTEND_URL]
+    origin: [process.env.FRONTEND_URL],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
   })
   await app.listen(4000);
 }
